@@ -6,13 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from '../material.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { NavComponent } from './components/nav/nav.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent
   ]
 })
 export class SharedModule { }

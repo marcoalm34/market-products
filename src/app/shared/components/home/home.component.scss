@@ -1,0 +1,10 @@
+@import '../../../../styles.scss';
+.home {
+    .title {
+        @include font-stylus(600, 1.3rem, #222);
+    }
+
+    .sub-title {
+        @include font-stylus(500, 1em, #777);
+    }
+}
