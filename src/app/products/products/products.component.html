@@ -1,1 +1,20 @@
-<p>products works!</p>
+<mat-tab-group>
+    <mat-tab label="Cadastro dos produtos">
+        <div class="container-form" fxLayout="column" fxLayoutALign="space-around stretch">
+
+            <form [formGroup]="productForm" fxLayout="column" fxLayoutAlign="space-around stretch">
+                <h1 class="title-form">Produtos</h1>
+                <div>
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Nome do produto">
+                    </mat-form-field>
+                </div>
+            </form>
+
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Meus produtos"></mat-tab>
+
+    <mat-tab label="test"></mat-tab>
+  </mat-tab-group>

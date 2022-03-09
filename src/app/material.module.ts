@@ -15,7 +15,8 @@ import {MatSelectModule} from '@angular/material/select';
 import{ MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatProgressSpinnerModule,
     MatMenuModule,
     MatSidenavModule,
+    MatTabsModule
     ],
   declarations: []
 })

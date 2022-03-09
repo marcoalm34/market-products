@@ -1,0 +1,9 @@
+@import '../../../styles.scss';
+.container-form {
+    padding: 20px;
+
+    .title-form {
+        @include font-stylus(600, 14px, #222);
+        text-align: center;
+    }
+}
