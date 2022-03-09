@@ -1,0 +1,23 @@
+@import '../../../../styles.scss';
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: transparent;
+
+    span {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+    
+        .text-footer {
+            @include font-stylus(600, 14px, #555);
+        }
+    
+        .icon-person {
+            color: green;
+            margin-left: 10px;
+        }
+    }
+}
+

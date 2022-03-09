@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Icons size */
+.icon-large {
+    font-size: 32px;
+}
+
+@mixin font-stylus($font-weight, $font-size, $font-color) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $font-color;
+}
+
