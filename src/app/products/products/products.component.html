@@ -2,11 +2,14 @@
     <mat-tab label="Cadastro dos produtos">
         <div class="container-form" fxLayout="column" fxLayoutALign="space-around stretch">
 
-            <form [formGroup]="productForm" fxLayout="column" fxLayoutAlign="space-around stretch">
+            <form [formGroup]="productForm" class="form" fxLayout="column" fxLayoutAlign="space-around stretch">
                 <h1 class="title-form">Produtos</h1>
-                <div>
-                    <mat-form-field>
+                <div flex fxLayout="row" fxLayoutALign="space-between center">
+                    <mat-form-field fxFlex="40">
                         <input matInput type="text" placeholder="Nome do produto">
+                    </mat-form-field>
+                    <mat-form-field fxFlex="40">
+                        <input matInput type="text" placeholder="Marca do produto">
                     </mat-form-field>
                 </div>
             </form>
