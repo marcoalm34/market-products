@@ -2,15 +2,51 @@
     <mat-tab label="Cadastro dos produtos">
         <div class="container-form" fxLayout="column" fxLayoutALign="space-around stretch">
 
-            <form [formGroup]="productForm" class="form" fxLayout="column" fxLayoutAlign="space-around stretch">
+            <form [formGroup]="productForm" class="form mat-elevation-z4" fxLayout="column" 
+            fxLayoutAlign="space-around stretch" fxLayoutGap="15">
                 <h1 class="title-form">Produtos</h1>
-                <div flex fxLayout="row" fxLayoutALign="space-between center">
-                    <mat-form-field fxFlex="40">
-                        <input matInput type="text" placeholder="Nome do produto">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field fxFlex="45">
+                        <mat-label>Produto</mat-label>
+                        <input matInput type="text" placeholder="nome do produto" formControlName="name">
+                        <mat-error *ngIf="productForm.controls['name'].hasError('required')">
+                            Campo de preenchimento obrigatório
+                        </mat-error>
                     </mat-form-field>
-                    <mat-form-field fxFlex="40">
-                        <input matInput type="text" placeholder="Marca do produto">
+                    <mat-form-field fxFlex="45">
+                        <mat-label>Marca</mat-label>
+                        <input matInput type="text" placeholder="marca do produto" formControlName="brand">
                     </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field fxFlex="30">
+                        <mat-label>Quantidade</mat-label>
+                        <input matInput type="number" placeholder="quantidade" formControlName="amount">
+                        <mat-error *ngIf="productForm.controls['amount'].hasError('min')">
+                            Campo de preenchimento obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="20">
+                        <mat-label>Unidade</mat-label>
+                        <mat-select formControlName="unit" placeholder="unidade do produto">
+                            <mat-option *ngFor="let unit of units" [value]="unit">
+                                {{unit.acronym}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="30">
+                        <mat-label>Preço R$</mat-label>
+                        <input matInput type="text" placeholder="preço R$" formControlName="price" 
+                        currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" >
+                        <mat-error *ngIf="productForm.controls['price'].hasError('min')">
+                            Campo de preenchimento obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around stretch">
+                    <button mat-icon-button color="primary">Check<mat-icon>done</mat-icon></button>
+                    <button mat-icon-button color="accent">Cancel<mat-icon>clear</mat-icon></button>
                 </div>
             </form>
 

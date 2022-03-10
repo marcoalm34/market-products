@@ -37,7 +37,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatProgressSpinnerModule,
     MatMenuModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
     ],
   declarations: []
 })
