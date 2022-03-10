@@ -30,7 +30,7 @@ export class ProductsService {
   }
 
   updateProduct(p: Product) {
-
+    
   }
 
   deleteProduct(p: Product) {

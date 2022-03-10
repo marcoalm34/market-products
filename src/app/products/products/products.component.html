@@ -3,7 +3,7 @@
         <div class="container-form" fxLayout="column" fxLayoutALign="space-around stretch">
 
             <form [formGroup]="productForm" class="form mat-elevation-z4" fxLayout="column" 
-            fxLayoutAlign="space-around stretch" fxLayoutGap="15">
+            fxLayoutAlign="space-around stretch" fxLayoutGap="15" *ngIf="!loading">
                 <h1 class="title-form">Produtos</h1>
                 <div fxLayout="row" fxLayoutAlign="space-between center">
                     <mat-form-field fxFlex="45">
@@ -45,11 +45,13 @@
                     </mat-form-field>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-around stretch">
-                    <button mat-icon-button color="primary">Check<mat-icon>done</mat-icon></button>
+                    <button mat-icon-button color="primary" [disabled]="productForm.invalid" (click)="submit()">
+                        Check<mat-icon>done</mat-icon>
+                    </button>
                     <button mat-icon-button color="accent">Cancel<mat-icon>clear</mat-icon></button>
                 </div>
             </form>
-
+            <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
         </div>
     </mat-tab>
 
