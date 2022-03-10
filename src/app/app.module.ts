@@ -10,8 +10,9 @@ import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
 import { registerLocaleData } from '@angular/common';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import localePt from '@angular/common/locales/pt';
 
-registerLocaleData('pt-Br');
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [

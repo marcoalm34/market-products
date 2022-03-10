@@ -17,7 +17,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [ ],
@@ -38,6 +38,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatMenuModule,
     MatSidenavModule,
     MatTabsModule,
+    MatTableModule,
     ],
   declarations: []
 })
