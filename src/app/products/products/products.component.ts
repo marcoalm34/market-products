@@ -69,7 +69,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     if(!product.id)
       this.createProduct();
     else
-      this.updateProduct();
+      this.updateProduct(product);
   }
 
   createProduct() {
@@ -92,8 +92,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
     }
   }
 
-  updateProduct() {
-    console.log('updated!')
+  updateProduct(p: Product) {
+    const id = p.id;
+    this.router.navigate(['update', id]);
   }
 
   deleteProduct() {

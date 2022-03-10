@@ -29,11 +29,16 @@ export class ProductsService {
       )
   }
 
-  updateProduct(p: Product) {
-    
+
+
+  updateProduct(id: number): Observable<Product> {
+    return this.http.put<Product>(this.api, id)
+      .pipe(
+        delay(1500)
+      )
   }
 
-  deleteProduct(p: Product) {
-
+  deleteProduct(id: number): Observable<Product>{
+    return this.http.delete<Product>(this.api)
   }
 }
