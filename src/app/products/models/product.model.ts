@@ -4,7 +4,8 @@ export interface Product {
     amount: number,
     unit: UnitProduct,
     price: number,
-    id?: number
+    date: string,
+    id?: number,
 }
 
 export interface UnitProduct {

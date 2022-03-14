@@ -13,5 +13,5 @@ export const units: UnitProduct[] = [
     {acronym: 'PC', name: 'peça'},
     {acronym: 'UN', name: 'unidade'},
     {acronym: 'GR', name: 'garrafa'},
-
+    {acronym: 'DZ', name: 'dúzia'}
 ]

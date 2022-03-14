@@ -1,11 +1,12 @@
 import { AfterContentInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { units } from 'src/app/shared/utils/unitProducts';
-import { Product } from '../models/product.model';
-import { ProductsService } from '../services/products.service';
+import { Product } from '../../models/product.model';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-products',
@@ -14,14 +15,15 @@ import { ProductsService } from '../services/products.service';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
 
-  activeTabs: number;
+  activeTabs: number = 1;
   loading: boolean = false;
   productForm: FormGroup;
   units = units;
   subscriptions: Subscription[] = [];
   displayedColumns: string[] = ['id', 'name', 'price', 'amount', 'total', 'actions'];
   products: Product[] = [];
-  noProducts: string = '';
+  dataSource: MatTableDataSource<Product[]> = new MatTableDataSource<Product[]>();
+
 
   constructor(
     private fb: FormBuilder,
@@ -36,12 +38,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   getProducts() {
-    const subscription = this.productService.getProducts().subscribe(
+    const subscription = this.productService.getAllProducts().subscribe(
       productList => {
         this.products = productList;
       },
       (err) => {
-        this.noProducts = 'Sem produtos a ser exibido';
+        console.log(err);
       }
     )
     this.subscriptions.push(subscription);
@@ -58,9 +60,10 @@ export class ProductsComponent implements OnInit, OnDestroy {
       id: [undefined],
       name: [null, [Validators.required]],
       brand: [null],
-      amount: [0, [Validators.required, Validators.min(1)]],
+      amount: [0, [Validators.required, Validators.min(0.1)]],
       unit: [null, Validators.maxLength(3)],
       price: [0, [Validators.required, Validators.min(0.1)]],
+      date: [null, [Validators.required]]
     })
   }
 

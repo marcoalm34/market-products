@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@import '../../../../styles.scss';
 .container-form {
     padding: 20px;
 
@@ -14,9 +14,8 @@
     }
 }
 
-.table {
-    th {
-        background-color: rgb(226, 217, 217);
-        @include font-stylus(500, 14px, #222);
-    }
+
+.text-noproducts {
+    @include font-stylus(600, 14px, #444);
+    margin-top: 25px;
 }

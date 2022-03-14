@@ -1,0 +1,51 @@
+<div class="form-container" fxLayout="row" fxLayoutAlign="space-around stretch">
+
+    <form class="form-detail" [formGroup]="productForm" fxLayout="column" fxFlex="75">
+        <h1 class="title">Detalhe do Produto</h1>
+        <mat-form-field appearance="outline">
+            <mat-label>Produto</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field fxFlex="60" appearance="outline">
+                <mat-label>Marca</mat-label>
+                <input matInput type="text" formControlName="brand">
+            </mat-form-field>
+            <mat-form-field fxFlex="30" appearance="outline">
+                <mat-label>Quantidade</mat-label>
+                <input matInput type="number" formControlName="amount">
+            </mat-form-field>
+        </div>
+        
+       <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field fxFlex="30" appearance="outline">
+            <mat-label>Unidade</mat-label>
+            <mat-select formControlName="unit" placeholder="unidade do produto">
+                <mat-option *ngFor="let unit of units" [value]="unit">
+                    {{unit.acronym}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Preço R$</mat-label>
+            <input matInput type="number" formControlName="price"
+            currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+        <mat-form-field fxFlex="35" appearance="outline">
+            <mat-label>Verbose datepicker</mat-label>
+                <input matInput [matDatepicker]="dp" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+       </div>
+
+       <div class="container-btn" fxLayout="row" flexLayoutAlign="space-around center">
+           <button mat-icon-button (click)="cancel()">cancel<mat-icon>close</mat-icon></button>
+           <button mat-icon-button (click)="update()">done<mat-icon>close</mat-icon></button>
+           <button mat-icon-button (click)="delete()">delete<mat-icon>close</mat-icon></button>
+       </div>
+        
+    </form>
+
+</div>

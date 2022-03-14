@@ -1,0 +1,13 @@
+@import '../../../../styles.scss';
+.form-container {
+    margin-top: 25px;
+
+    .form-detail {
+        .title {
+            @include font-stylus(600, 18px, #222);
+            text-align: center;
+        }
+    }
+    
+}
+
